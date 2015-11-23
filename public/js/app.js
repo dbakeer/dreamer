@@ -1,6 +1,9 @@
-var app = angular.module('dreamApp', ['geolocation']);
+var app = angular.module('dreamApp', [ 'geolocation', 'gservice']);
 
-app.controller('addCtrl', ['$http', '$scope', 'geolocation', function($http, $scope, geolocation){
+////////////////////////////////////
+/////// ADD USER CONTROLLER ///////
+////////////////////////////////////
+app.controller('addCtrl', ['$http', '$scope', 'geolocation', 'gservice', function($http, $scope, geolocation, gservice){
 
   $scope.formData = {};
   var coords = {};
@@ -26,7 +29,7 @@ app.controller('addCtrl', ['$http', '$scope', 'geolocation', function($http, $sc
       $scope.formData.gender = '';
       $scope.formData.age = '';
       $scope.formData.dream = '';
-      // gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+      gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
     }).error(function(data){
       console.log('Error: ', + data);
     });
