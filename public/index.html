@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
 
-    <title>Dream</title>
+    <title>Dreamers</title>
 
     <meta name="description" content="An app that visualizes people's dreams across the world">
 
@@ -32,6 +32,10 @@
     <script src="js/gservice.js"></script>
     <script src="js/addCtrl.js"></script>
 
+    <!-- FONTS -->
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
   </head>
 
   <body ng-controller="addCtrl">
@@ -39,14 +43,14 @@
     <!-- HEADER -->
     <div class="container">
       <div class="header">
-        <h1>Dream</h1>
-        <h2>Tell Your Dreams and See Dreams Across the World</h2>
+        <h1 id = "logo">Dreamers</h1>
+        <h2 id="byline">Tell Your Dreams and See Dreams Across the World</h2>
       </div>
 
       <!-- MAP -->
       <div class="row content">
         <div class="col-md-7">
-          <div id="map" style="width:645px; height:645px">
+          <div id="map" style="width:645px; height:690px">
           </div>
         </div>
 
@@ -54,7 +58,7 @@
           <div class="col-md-5">
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h2 class="panel-title text-center">
+                <h2 class="panel-title text-center" id="instructions">
                   Write your dream! What do you want to do? Who do you want to be? Tell the world.
                 </h2>
               </div>

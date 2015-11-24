@@ -1,0 +1,26 @@
+body {
+  background: #cc99ff;
+}
+
+#logo {
+  font-family: 'Sonsie One', cursive;
+  text-align: center;
+}
+
+#byline {
+  font-family: 'Abel', sans-serif;
+  text-align: center;
+}
+
+#instructions {
+  font-family: 'Abel', sans-serif;
+}
+
+label {
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+}
+
+#bubble {
+  
+}

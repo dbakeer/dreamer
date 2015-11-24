@@ -76,12 +76,18 @@ angular.module('gservice', [])
             position: n.latlon,
             map: map,
             title: "Big Map",
-            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            animation: google.maps.Animation.DROP,
+            icon: "http://orig08.deviantart.net/57de/f/2011/191/f/c/cute_cloud_animated_icon_by_mishavs-d3lnfhq.gif",
           });
 
           google.maps.event.addListener(marker, 'click', function(e){
             currentSelectedMarker = n;
             n.message.open(map, marker);
+              if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+              } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
           });
         });
 
@@ -91,7 +97,7 @@ angular.module('gservice', [])
           position: initialLocation,
           animation: google.maps.Animation.BOUNCE,
           map: map,
-          icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+          icon: 'http://www.picgifs.com/graphics/k/kawaii-small/graphics-kawaii-small-935713.gif',
         });
         lastMarker = marker;
 
@@ -102,7 +108,7 @@ angular.module('gservice', [])
             position: e.latLng,
             animation: google.maps.Animation.BOUNCE,
             map: map,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+            icon: 'http://www.picgifs.com/graphics/k/kawaii-small/graphics-kawaii-small-935713.gif'
           });
 
           if(lastMarker){
