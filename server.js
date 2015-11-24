@@ -25,6 +25,10 @@ server.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, server.settings.env);
 });
 
-server.get('/', function(req, res){
-  res.render('index');
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error'));
+
+db.once('open', function(){
+  console.log("DATABASE UP");
 });
