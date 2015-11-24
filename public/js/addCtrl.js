@@ -1,3 +1,6 @@
+/////////////////////////////////
+///// CONTROLLER FOR ENTRIES ////
+/////////////////////////////////
 var addCtrl = angular.module('addCtrl', ['geolocation', 'gservice']);
 
 addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, gservice){

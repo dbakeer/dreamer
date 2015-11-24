@@ -1,29 +1,32 @@
 // DEPENDENCIES
-var express        = require('express'),
+var PORT           = process.env.PORT || 3000,
+    MONGOURI       = process.env.MONGOLAB_URI || "mongodb://localhost/DreamApp",
+    dbname         = "DreamApp",
     mongoose       = require('mongoose'),
-    PORT           = process.env.PORT || 3000,
-    morgan         = require('morgan'),
+    express        = require('express'),
+    server         = express(),
     bodyParser     = require('body-parser'),
+    morgan         = require('morgan'),
     methodOverride = require('method-override'),
-    server         = express();
+    flash          = require('connect-flash');
 
-// CONNECT TO DATABASE
-mongoose.connect("mongodb://localhost/DreamApp");
-
-server.use(express.static(__dirname + '/public'));
+server.use(express.static('./public'));
 server.use('/bower_components', express.static(__dirname + '/bower_components'));
+
 server.use(morgan('dev'));
+server.use(methodOverride('_method'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended:true}));
 server.use(bodyParser.text());
 server.use(bodyParser.json({type: 'application/vnd.api+json'}));
-server.use(methodOverride());
 
-require('./app/routes.js')(server);
+module.exports = server;
 
-server.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, server.settings.env);
-});
+server.use(flash());
+
+
+
+mongoose.connect("mongodb://localhost/DreamApp");
 
 var db = mongoose.connection;
 
@@ -33,21 +36,14 @@ db.once('open', function(){
   console.log("DATABASE UP");
 });
 
-// // QUOTAGUARD
-// var request = require('request');
-//
-// var options = {
-//     proxy: process.env.QUOTAGUARD_URL,
-//     url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC3IjvUEEuhri-V2W10RshoYj2K5XRgB9g',
-//     headers: {
-//         'User-Agent': 'node.js'
-//     }
-// };
-//
-// function callback(error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//         console.log(body);
-//     }
-// }
-//
-// request(options, callback);
+server.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, server.settings.env);
+});
+
+
+
+require('./app/routes.js')(server);
+
+server.get('/', function(req, res){
+  res.render('index');
+});

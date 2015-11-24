@@ -21,6 +21,14 @@ label {
   font-size: 16px;
 }
 
-#bubble {
-  
+#map {
+  border: 2px black dotted;
+  border-radius: 25%;
+}
+
+#sidepanel {
+  border: 2px black dotted;
+  border-radius: 25%;
+  width: 400px;
+  height: 690px;
 }
