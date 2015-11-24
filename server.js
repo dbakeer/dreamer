@@ -33,21 +33,21 @@ db.once('open', function(){
   console.log("DATABASE UP");
 });
 
-// QUOTAGUARD
-var request = require('request');
-
-var options = {
-    proxy: process.env.QUOTAGUARD_URL,
-    url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC3IjvUEEuhri-V2W10RshoYj2K5XRgB9g',
-    headers: {
-        'User-Agent': 'node.js'
-    }
-};
-
-function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-        console.log(body);
-    }
-}
-
-request(options, callback);
+// // QUOTAGUARD
+// var request = require('request');
+//
+// var options = {
+//     proxy: process.env.QUOTAGUARD_URL,
+//     url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC3IjvUEEuhri-V2W10RshoYj2K5XRgB9g',
+//     headers: {
+//         'User-Agent': 'node.js'
+//     }
+// };
+//
+// function callback(error, response, body) {
+//     if (!error && response.statusCode == 200) {
+//         console.log(body);
+//     }
+// }
+//
+// request(options, callback);
