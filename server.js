@@ -1,7 +1,7 @@
 // DEPENDENCIES
 var PORT           = process.env.PORT || 3000,
-    MONGOURI       = process.env.MONGOLAB_URI || "mongodb://localhost:27017/DreamApp",
-    dbname         = "DreamApp",
+    MONGOURI       = process.env.MONGOLAB_URI || "mongodb://localhost:27017",
+    dbname         = "/DreamApp",
     mongoose       = require('mongoose'),
     express        = require('express'),
     server         = express(),
@@ -24,7 +24,7 @@ module.exports = server;
 
 server.use(flash());
 
-mongoose.connect("mongodb://localhost:27017/DreamApp");
+mongoose.connect(MONGOURI + dbname);
 
 var db = mongoose.connection;
 
