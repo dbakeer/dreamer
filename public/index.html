@@ -50,29 +50,28 @@
       <!-- MAP -->
       <div class="row content">
         <div class="col-md-7">
-          <div id="map" style="width:550px; height:690px">
+          <div id="map" style="width:550px; height:725px">
           </div>
         </div>
 
           <!-- SIDE PANEL -->
           <div class="col-md-5">
             <div class="panel panel-default" id="sidepanel">
-              <div class="panel-heading">
-                <h2 class="panel-title text-center" id="instructions">
-                  Write your dream! What do you want to do? Who do you want to be? Tell the world.
-                </h2>
-              </div>
+
 
               <!-- PANEL BODY -->
-              <div class="panel-body">
+              <div class="panel-body" id="allform">
+                  <h2 id="instructions">
+                    Write your dream! What do you want to do? Who do you want to be? Tell the world.
+                  </h2>
                 <form name="addForm" novalidate>
                   <div class="form-group">
-                    <label for="username">Username
+                    <label for="username">Alias
                       <span class="badge">
                         All fields required
                       </span>
                     </label>
-                    <input type="text" class="form-control" id="username" placeholder="Choose a Username!" ng-model="formData.username" required>
+                    <input type="text"  id="username" placeholder="Choose an Alias!" ng-model="formData.username" required>
                   </div>
 
                   <label class="radio control-label">
@@ -103,28 +102,30 @@
                     <label for="age">
                       Age
                     </label>
-                    <input type="number" class="form-control" id="age" placeholder="Your Age" ng-model="formData.age" required>
+                    <input type="number"  id="age" placeholder="Your Age" ng-model="formData.age" required>
                   </div>
 
                   <div class="form-group">
                     <label for="dream">
                       What is your dream?
                     </label>
-                    <input type="text" class="form-control" id="dream" placeholder="Your dream!" ng-model="formData.dream" required>
+                    <input type="text"  id="dream" placeholder="Your dream!" ng-model="formData.dream" required>
                   </div>
 
                   <div class="form-group">
                     <label for="latitude">
                       Latitude
                     </label>
-                    <input type="text" class="form-control" id="latitude" value="39.500" ng-model="formData.latitude" readonly>
+                    <br/>
+                    <input type="text"  id="latitude" value="39.500" ng-model="formData.latitude" readonly>
                   </div>
 
                   <div class="form-group">
                     <label for="longitude">
                       Longitude
                     </label>
-                    <input type="text" class="form-control" id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
+                    <br/>
+                    <input type="text"  id="longitude" value="-98.350" ng-model="formData.longitude" readonly>
                   </div>
 
                   <div class="form-group">
@@ -137,11 +138,11 @@
                         </button>
                       </span>
                     </label>
-                    <input type="text" class="form-control" id="verified" placeholder= "No Thank You :(" ng-model="formData.htmlverified" readonly>
+                    <input type="text"  id="verified" placeholder= "No Thank You :(" ng-model="formData.htmlverified" readonly>
                   </div>
 
                   <!-- SUBMIT BUTTON-->
-                  <button type="submit" class="btn btn-danger btn-block" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
+                  <button type="submit" class="submitbutton" ng-click="createUser()" ng-disabled="addForm.$invalid">Submit</button>
                 </form>
               </div>
           </div>

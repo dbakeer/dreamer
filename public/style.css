@@ -5,15 +5,21 @@ body {
 #logo {
   font-family: 'Sonsie One', cursive;
   text-align: center;
+  font: #009966 !important;
 }
 
 #byline {
   font-family: 'Abel', sans-serif;
   text-align: center;
+  font: #009966 !important;
 }
 
 #instructions {
   font-family: 'Abel', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  width: 300px;
+  margin-left: 15px;
 }
 
 label {
@@ -22,13 +28,51 @@ label {
 }
 
 #map {
-  border: 2px black dotted;
+  border: 2px #00ff99 dotted;
   border-radius: 25%;
 }
 
 #sidepanel {
-  border: 2px black dotted;
+  border: 2px #00ff99 dotted;
   border-radius: 25%;
   width: 400px;
-  height: 690px;
+  height: 725px;
+  background: #ffccff;
+}
+
+#instdiv {
+  border: solid black 1px;
+  border-radius: 25%;
+  width: 250px;
+}
+
+.badge {
+  background: #009966;
+}
+
+.submitbutton {
+  font-family: 'Sonsie One', cursive;
+  width: 250px;
+  margin-left: 50px;
+}
+
+input[type=text] {
+ border-right: 0;
+ border-left: 0;
+ border-top: 0;
+ border-bottom: 1px #009966 solid;
+ margin-left:1px;
+ padding: 5px;
+ font-size: 18px;
+ width: 300px;
+ background: transparent;
+ font-family: 'Abel', sans-serif;
+}
+
+input[type=text]:focus {
+ outline: none;
+}
+
+#allform {
+  margin-left: 15px;
 }
